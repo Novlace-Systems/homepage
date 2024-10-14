@@ -1,0 +1,442 @@
+
+.dashboard-container {
+  display: flex;
+  min-height: 100vh; /* Faz o container ocupar 100% da altura da tela */
+  background-color: #f3f4f6; /* Cor de fundo leve */
+  color: #5b21b6; /* text-purple-900 */
+}
+
+.sidebar {
+  width: 150px;
+  background-color: #e6e7ff;
+  padding: 1rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center; /* Alinha o ícone e o texto verticalmente */
+  padding: 0.5rem 0; /* Espaçamento entre os itens */
+  color: #5b21b6; /* Cor do texto e do ícone */
+  cursor: pointer;
+}
+
+.sidebar-item i {
+  margin-right: 0.5rem; /* Espaçamento entre o ícone e o texto */
+  font-size: 1.2rem; /* Tamanho do ícone */
+}
+
+.dashboard-wrapper {
+  background-color: #ffffff; /* Cor de fundo */
+  border-radius: 20px; /* Borda arredondada */
+  padding: 20px; /* Espaçamento interno */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+  flex: 1; /* Preencher o espaço disponível */
+  max-width: 900px; /* Limita a largura máxima */
+  width: 70%; /* Faz com que ocupe todo o espaço possível */
+  margin: 0 auto; /* Centraliza o wrapper horizontalmente */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centraliza o conteúdo verticalmente */
+}
+
+
+.logo-container {
+  text-align: center; /* Centraliza o logo */
+  margin-bottom: 2rem; /* Espaço abaixo do logo */
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column; /* Ícones empilhados */
+  align-items: center; /* Centraliza os ícones */
+}
+
+.sidebar-icon {
+  margin: 1rem 0; /* Espaço entre os ícones */
+  color: #7e22ce; /* Cor dos ícones */
+  cursor: pointer; /* Mão ao passar o mouse */
+  transition: color 0.3s;
+}
+
+.sidebar-icon:hover {
+  color: #6b21a8; /* Cor ao passar o mouse */
+}
+
+.dashboard-content {
+  flex: 1; /* O conteúdo ocupa o restante da tela */
+  padding: 1rem; /* p-4 */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+
+.logo {
+  width: 80px;
+  height: 80px;
+}
+
+.search-container {
+  position: relative;
+  background-color: #e9d5ff; /* bg-purple-100 */
+  border-radius: 9999px; /* rounded-full */
+}
+
+.search-input {
+  background: transparent;
+  border-radius: 9999px; /* rounded-full */
+  padding: 0.5rem 1rem; /* py-2 px-4 */
+  padding-right: 2.5rem; /* pr-10 */
+  width: 30rem; /* w-64 */
+  border: transparent;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1); 
+  margin: 0 auto;
+}
+
+.search-icon {
+  position: absolute;
+  right: 1rem; /* right-3 */
+  top: 0.4rem; /* top-2.5 */
+  color: #6b21a8; /* text-purple-400 */
+}
+
+.mood-title {
+  font-size: 20px;
+
+}
+.emoji-container {
+  display: flex;
+  justify-content: center; /* Centraliza os botões de emojis horizontalmente */
+  gap: 10px; /* Espaçamento entre os botões */
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.emoji-button {
+  display: none;
+}
+
+.emoji-button + label {
+  font-size: 24px;
+  cursor: pointer;
+  padding: 7px;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  transition: border-color 0.3s;
+}
+
+.emoji-button:checked + label {
+  border-color: #5b21b6;
+  background-color: mediumpurple;
+}
+
+.community-section {
+  margin-bottom: 2rem; /* mb-8 */
+}
+
+.community-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+.community-title {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: bold; /* font-bold */
+}
+
+.community-buttons {
+  display: flex;
+  gap: 0.5rem; /* space-x-2 */
+}
+
+
+.button-all, .button-recent, .button-region {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: lighter;
+  color: #6b21a8; /* Cor do texto */
+  background-color: transparent; /* Fundo transparente */
+  border: none; /* Remover borda se houver */
+  cursor: pointer; /* Mão ao passar o mouse */
+  padding: 0.5rem; /* Adicione um pouco de espaço se necessário */
+  transition: background-color 0.3s, color 0.3s; /* Transição suave */
+  border-radius: 1.5rem;
+}
+
+.button-all:hover, .button-recent:hover, .button-region:hover {
+  background-color: rgba(110, 27, 179, 0.1); /* Efeito de hover com leve fundo */
+  color: #5b21b6; /* Mudança de cor ao passar o mouse, se desejado */
+}
+
+.community-card {
+  background-color: #ffffff; /* bg-white */
+  border-radius: 0.5rem; /* rounded-lg */
+  overflow: hidden;
+  box-shadow: 0 5px 3px rgba(0, 0, 0, 0.1); /* shadow */
+}
+
+.button-container-like {
+  display: flex;
+  justify-content: flex-end; /* Alinha o botão à direita */
+  margin: 1rem; /* Espaçamento, se necessário */
+}
+
+.con-like {
+  --red:#5b21b6;
+  position: relative;
+  width: 25px;
+  height: 25px;
+}
+
+.con-like .like {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.con-like .checkmark {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.con-like .outline,
+.con-like .filled {
+  fill: var(--red);
+  position: absolute;
+}
+
+.con-like .filled {
+  animation: kfr-filled 0.5s;
+  display: none;
+}
+
+.con-like .celebrate {
+  position: absolute;
+  animation: kfr-celebrate 0.5s;
+  animation-fill-mode: forwards;
+  display: none;
+}
+
+.con-like .poly {
+  stroke: var(--red);
+  fill: var(--red);
+}
+
+.con-like .like:checked ~ .checkmark .filled {
+  display: block
+}
+
+.con-like .like:checked ~ .checkmark .celebrate {
+  display: block
+}
+
+@keyframes kfr-filled {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes kfr-celebrate {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+    display: none;
+  }
+}
+
+button:hover .empty {
+  opacity: 0;
+}
+
+button:hover .filled {
+  opacity: 1;
+  animation: beatingHeart 1.2s infinite;
+}
+
+.community-image {
+  width: 100%;
+  height: 10rem; /* h-40 */
+  object-fit: cover; /* object-cover */
+}
+
+.community-info {
+  padding: 1.5rem; /* p-4 */
+}
+
+.community-name {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: bold; /* font-bold */
+  margin-top: 0.5rem;
+}
+
+.community-text {
+  font-size: 14px; /* text-xl */
+}
+
+.news-section {
+  margin-bottom: 2rem; /* mb-8 */
+}
+
+.news-title {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: bold; /* font-bold */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+
+.news-cards {
+  display: flex;
+  gap: 1rem; /* space-x-4 */
+  overflow-x: auto; /* overflow-x-auto para rolagem horizontal */
+  flex-wrap: nowrap; /* Evita quebra de linha dos cartões */
+  scroll-behavior: smooth; /* Adiciona rolagem suave */
+  -ms-overflow-style: none;  /* Para o Internet Explorer e o Edge */
+  scrollbar-width: none;  /* Para o Firefox */
+}
+
+.news-cards::-webkit-scrollbar {
+  display: none; /* Para o Chrome, Safari e Opera */
+}
+
+.news-card {
+  background-color: #ffffff; /* bg-white */
+  border-radius: 0.5rem; /* rounded-lg */
+  overflow: hidden;
+  flex-shrink: 0; /* flex-shrink-0 */
+  width: 33.33%; /* w-1/3 */
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1); /* shadow */
+}
+
+.news-image {
+  width: 100%;
+  height: 6rem; /* h-24 */
+  object-fit: cover; /* object-cover */
+}
+
+.news-description {
+  padding: 0.5rem; /* p-2 */
+  font-size: 0.875rem; /* text-sm */
+}
+
+.favorites-section {
+  margin-top: 2rem; /* mt-8 */
+}
+
+.favorites-card, .psychologists-card {
+  background-color: #d6cbf3; /* bg-white */
+  border-radius: 0.5rem; /* rounded-lg */
+  padding: 2rem; /* p-4 */
+  margin-bottom: 1rem; /* mb-4 */
+  box-shadow: 0 5px 3px rgba(0, 0, 0, 0.1); /* shadow */
+}
+
+.favorites-title, .psychologists-title {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: bold; /* font-bold */
+  margin-bottom: 0.5rem; /* mb-2 */
+  margin-right: 1rem;
+}
+
+.favorites-list, .psychologists-list {
+  list-style: none;
+  padding: 0; /* space-y-2 */
+}
+
+.favorite-item, .psychologist-item {
+  display: flex;
+  align-items: center;
+}
+
+.favorite-icon, .psychologist-icon {
+  color: #6b21a8; /* text-purple-400 */
+  margin-right: 0.5rem; /* mr-2 */
+}
+
+.psychologist-image {
+  width: 2rem; /* w-8 */
+  height: 2rem; /* h-8 */
+  border-radius: 50%; /* rounded-full */
+  margin-right: 0.5rem; /* mr-2 */
+  margin-top: 1rem;
+}
+
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #ffffff; /* bg-white */
+  padding: 1rem; /* p-4 */
+  display: flex;
+  justify-content: space-around; /* justify-around */
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1); /* shadow */
+}
+
+.navbar-icon {
+  color: #7e22ce; /* text-purple-700 */
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  background-color: #6b21a8;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+
+.carousel-control-prev-icon:hover, .carousel-control-next-icon:hover {
+  background-color: #5b21b6;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: transparent;
+  opacity: 0.5; /* Define o nível de transparência */
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  opacity: 1; /* Torna os ícones totalmente visíveis ao passar o mouse */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: transparent; /* Remove o fundo dos botões */
+  border: none; /* Remove bordas */
+  outline: none; /* Remove o contorno ao focar */
+}
+
+.dashboard-layout {
+  display: flex;
+}
+
+.container {
+  width: 40%; /* Ajuste a largura conforme necessário */
+  padding: 20px;
+  background-color: #f0f0f0;
+}
